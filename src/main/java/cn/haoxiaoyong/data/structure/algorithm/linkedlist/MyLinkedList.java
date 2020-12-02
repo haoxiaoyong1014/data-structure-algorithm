@@ -5,6 +5,7 @@ package cn.haoxiaoyong.data.structure.algorithm.linkedlist;
  * @date created at 下午3:46 on 2020/12/1
  * @github https://github.com/haoxiaoyong1014
  * @blog www.haoxiaoyong.cn
+ * 借助哨兵节点，实现一个单链表
  */
 
 public class MyLinkedList {
