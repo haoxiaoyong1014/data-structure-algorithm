@@ -92,16 +92,6 @@ public class MyLinkedList {
         pred.next = pred.next.next;
     }
 
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-
     public static void main(String[] args) {
         MyLinkedList linkedList = new MyLinkedList();
         linkedList.addAtHead(1);
@@ -110,5 +100,13 @@ class ListNode {
         System.out.println(linkedList.get(1)); //返回2
         linkedList.deleteAtIndex(1);  //现在链表是1-> 3
         System.out.println(linkedList.get(1));//返回3
+    }
+}
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
     }
 }
