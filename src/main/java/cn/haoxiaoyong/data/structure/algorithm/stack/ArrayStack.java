@@ -63,6 +63,7 @@ public class ArrayStack {
         for (; i < 5; ++i) {
             arrayStack.push(i + "_item");
         }
+
         int j = 0;
         for (; j < 5; ++j) {
             System.out.println(arrayStack.pop());
