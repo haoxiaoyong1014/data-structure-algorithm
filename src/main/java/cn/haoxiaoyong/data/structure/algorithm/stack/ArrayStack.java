@@ -1,7 +1,5 @@
 package cn.haoxiaoyong.data.structure.algorithm.stack;
 
-import java.util.LinkedList;
-
 /**
  * @author haoxiaoyong
  * @date created at 下午2:42 on 2020/12/1

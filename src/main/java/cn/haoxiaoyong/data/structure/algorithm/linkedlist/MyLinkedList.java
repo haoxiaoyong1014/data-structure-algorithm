@@ -28,7 +28,9 @@ public class MyLinkedList {
         ListNode curr = head;
         // index steps needed
         // to move from sentinel node to wanted index
-        for (int i = 0; i < index + 1; ++i) curr = curr.next;
+        for (int i = 0; i < index + 1; ++i) {
+            curr = curr.next;
+        }
         return curr.val;
     }
 
@@ -102,6 +104,7 @@ public class MyLinkedList {
         System.out.println(linkedList.get(1));//返回3
     }
 }
+
 class ListNode {
     int val;
     ListNode next;
