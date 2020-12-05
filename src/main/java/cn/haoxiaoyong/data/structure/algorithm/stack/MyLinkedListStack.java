@@ -5,6 +5,7 @@ package cn.haoxiaoyong.data.structure.algorithm.stack;
  * @date created at 下午3:46 on 2020/12/1
  * @github https://github.com/haoxiaoyong1014
  * @blog www.haoxiaoyong.cn
+ * 基于链表实现栈
  */
 
 public class MyLinkedListStack {
@@ -25,22 +26,22 @@ public class MyLinkedListStack {
     public int get() {
 
         ListNodeStack curr = head;
-        // index steps needed
-        // to move from sentinel node to wanted index
+
         for (int i = 0; i < size; ++i) {
             curr = curr.next;
-
         }
         --size;
+        if (curr.val == 0) {
+
+            return -1;
+        }
         return curr.val;
     }
 
-    /**
-     * Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
-     */
+
     public void addAtIndex(int val) {
 
-        if (size > n) {
+        if (size >= n) {
             return;
         }
         // find predecessor of the node to be added
@@ -65,7 +66,7 @@ public class MyLinkedListStack {
         }
 
         int j = 0;
-        for (; j < 5; ++j) {
+        for (; j < 7; ++j) {
             System.out.println(linkedList.get());
         }
     }
