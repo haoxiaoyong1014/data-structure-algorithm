@@ -9,12 +9,14 @@ package cn.haoxiaoyong.data.structure.algorithm.stack;
 
 public class MyLinkedListStack {
 
-    int size;
+    int size; //栈元素个数
     ListNodeStack head;  // sentinel node as pseudo-head
+    int n; //栈大小
 
-    public MyLinkedListStack() {
-        size = 0;
-        head = new ListNodeStack(0);
+    public MyLinkedListStack(int n) {
+        this.size = 0;
+        this.head = new ListNodeStack(0);
+        this.n = n;
     }
 
     /**
@@ -25,9 +27,10 @@ public class MyLinkedListStack {
         ListNodeStack curr = head;
         // index steps needed
         // to move from sentinel node to wanted index
-        //for (int i = 0; i < size; ++i) {
-        curr = curr.next;
-        //}
+        for (int i = 0; i < size; ++i) {
+            curr = curr.next;
+
+        }
         --size;
         return curr.val;
     }
@@ -37,6 +40,9 @@ public class MyLinkedListStack {
      */
     public void addAtIndex(int val) {
 
+        if (size > n) {
+            return;
+        }
         // find predecessor of the node to be added
         ListNodeStack pred = head;
         for (int i = 0; i < size; ++i) {
@@ -51,35 +57,17 @@ public class MyLinkedListStack {
 
     }
 
-    /**
-     * Delete the index-th node in the linked list, if the index is valid.
-     */
-    public void deleteAtIndex(int index) {
-        // if the index is invalid, do nothing
-        if (index < 0 || index >= size) return;
-
-        size--;
-        // find predecessor of the node to be deleted
-        ListNodeStack pred = head;
-        for (int i = 0; i < index; ++i) {
-
-            pred = pred.next;
+    public static void main(String[] args) {
+        MyLinkedListStack linkedList = new MyLinkedListStack(5);
+        int i = 0;
+        for (; i < 6; ++i) {
+            linkedList.addAtIndex(i + 1);
         }
 
-        // delete pred.next
-        pred.next = pred.next.next;
-    }
-
-    public static void main(String[] args) {
-        MyLinkedListStack linkedList = new MyLinkedListStack();
-        linkedList.addAtIndex( 1);
-        linkedList.addAtIndex( 2);
-        linkedList.addAtIndex( 3);
-        System.out.println(linkedList.get());
-        System.out.println(linkedList.get());
-        System.out.println(linkedList.get());
-        //linkedList.deleteAtIndex(1);  //现在链表是1-> 3
-        //System.out.println(linkedList.get(1));//返回3
+        int j = 0;
+        for (; j < 5; ++j) {
+            System.out.println(linkedList.get());
+        }
     }
 }
 
