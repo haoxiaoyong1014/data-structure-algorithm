@@ -7,7 +7,7 @@ package cn.haoxiaoyong.data.structure.algorithm.array;
  * @blog www.haoxiaoyong.cn
  * 数组反转
  * 空间复杂度O(1)/O(n)
- * 时间复杂度O(n)/O(n^2)
+ * 时间复杂度O(n)/O(2n)
  */
 public class ReverseArray {
 
@@ -28,7 +28,7 @@ public class ReverseArray {
     }
 
     //方式二
-    //空间复杂度为O(n),时间复杂度O(n^2) （不考虑初始化数组大小）
+    //空间复杂度为O(n),时间复杂度O(2n) （不考虑初始化数组大小）
     public static void reverse() {
         int n = 100;
         //初始化数组
