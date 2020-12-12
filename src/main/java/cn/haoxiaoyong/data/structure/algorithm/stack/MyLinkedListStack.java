@@ -5,7 +5,7 @@ package cn.haoxiaoyong.data.structure.algorithm.stack;
  * @date created at 下午3:46 on 2020/12/1
  * @github https://github.com/haoxiaoyong1014
  * @blog www.haoxiaoyong.cn
- * 基于链表实现栈
+ * 基于链表实现栈，这个是实现是有bug的,无bug见StackBasedOnLinkedList.class
  */
 
 public class MyLinkedListStack {
