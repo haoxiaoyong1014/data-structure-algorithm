@@ -35,6 +35,23 @@ public class ArrayQueue {
         return true;
     }
 
+    //优化入队
+    public boolean optimizationEnqueue(String item) {
+        if (tail == n) { //队列是满的
+            if (head == 0) return false;
+            //移动数据
+            int i = head;
+            for (; i < tail; ++i) {
+                items[i - head] = items[i];
+            }
+            tail -= head;   //同 tail = tail - head;
+            head = 0;
+        }
+        items[tail] = item;
+        ++tail;
+        return true;
+    }
+
     public String dequeue() {
 
         if (head == tail && tail == 0) {
