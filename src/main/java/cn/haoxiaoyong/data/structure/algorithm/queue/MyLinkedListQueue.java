@@ -1,6 +1,5 @@
 package cn.haoxiaoyong.data.structure.algorithm.queue;
 
-import org.omg.CORBA.NO_IMPLEMENT;
 
 /**
  * @author haoxiaoyong on 2020/12/13 下午 9:28
