@@ -12,8 +12,8 @@ import org.omg.CORBA.NO_IMPLEMENT;
 public class MyLinkedListQueue {
 
     //private NodeQueue node;
-    private NodeQueue head;
-    private NodeQueue tail;
+    private NodeQueue head = null;
+    private NodeQueue tail = null;
 
     //入队
     public boolean enqueue(int value) {
@@ -29,12 +29,15 @@ public class MyLinkedListQueue {
         return true;
     }
 
-    //出队
+    //出队，-1表示队列为空
     public int dequeue() {
 
         if (head == null && tail == null) return -1;
         int data = head.data;
         head = head.next;//移动head指针
+        if (head == null) { //head 的下一个元素为空，队列就为空了
+            tail = null;
+        }
         return data;
     }
 
