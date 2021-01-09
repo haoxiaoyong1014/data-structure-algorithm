@@ -6,7 +6,7 @@ package cn.haoxiaoyong.data.structure.algorithm.sort;
  * @github https://github.com/haoxiaoyong1014
  * @blog www.haoxiaoyong.cn
  */
-public class BubbleSor {
+public class BubbleSort {
 
 
     // 冒泡排序，a表示数组，n表示数组大小
