@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class InsertionSort {
 
 
-    //个人觉得这个空间复杂度会高，而insertionSort方法 没有用中间变量
+    //个人觉得这个空间复杂度会高，而optimizationInsertionSort方法 没有用中间变量
     public static void insertionSort(int arr[], int n) {
 
         for (int i = 1; i < n; i++) {
