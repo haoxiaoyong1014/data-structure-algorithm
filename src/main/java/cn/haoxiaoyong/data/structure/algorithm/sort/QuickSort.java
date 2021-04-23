@@ -82,8 +82,9 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int a[] = {6, 1, 2, 7,9, 3, 4, 5, 8};
-        quickSort(a, a.length);
+        int a[] = {6, 1, 2, 7, 9, 3, 4, 5, 8};
+        //quickSort(a, a.length);
+        quickSort(a, 0, a.length - 1);
         System.out.println(Arrays.toString(a));
     }
 
@@ -92,5 +93,46 @@ public class QuickSort {
   */
     private static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
+    }
+
+
+    /**
+     * 快速排序_2刷
+     */
+
+    public static void quickSort(int[] arr, int start, int end) {
+        //递归终止条件
+        if (start < end) {
+            //首先找到一个基准值，一般都是数组的第一个
+            int standard = arr[start];
+
+            int low = start;
+
+            int high = end;
+
+            while (low < high) {
+
+                //然后从右边开始遍历，找到比基准值小的值
+                while (low < high && standard <= arr[high]) {
+                    high--;
+                }
+
+                arr[low] = arr[high];
+                //从左边开始遍历，找到一个比基准值大的值
+                while (low < high && standard >= arr[low]) {
+                    low++;
+                }
+                arr[high] = arr[low];
+
+            }
+
+            arr[low] = standard;
+
+            quickSort(arr, start, low);
+
+            quickSort(arr, low + 1, end);
+
+        }
+
     }
 }
