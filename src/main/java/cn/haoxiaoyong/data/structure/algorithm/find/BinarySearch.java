@@ -20,7 +20,8 @@ public class BinarySearch {
         int low = 0;
         int high = arr.length - 1;
 
-        while (low < high) {
+        //注意这里是小于等于，不然当查询临界值8的时候会出现错误
+        while (low <= high) {
             int mid = (low + high) / 2;
 
             if (arr[mid] > value) {
@@ -38,6 +39,6 @@ public class BinarySearch {
     public static void main(String[] args) {
         int arr[] = {8, 11, 19, 23, 27, 33, 45, 55, 67, 98};
 
-        System.out.println(binarySearch(arr, 67));
+        System.out.println(binarySearch(arr, 8));
     }
 }
