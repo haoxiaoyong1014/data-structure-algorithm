@@ -1,7 +1,4 @@
-package cn.haoxiaoyong.data.structure.algorithm.topic;
-
-import java.util.Arrays;
-import java.util.List;
+package cn.haoxiaoyong.data.structure.algorithm.training;
 
 /**
  * @author haoxiaoyong on 2021/6/25 下午 10:32
