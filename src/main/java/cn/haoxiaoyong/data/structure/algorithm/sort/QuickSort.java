@@ -83,8 +83,10 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int a[] = {6, 1, 2, 7, 9, 3, 4, 5, 8};
+        //int a[] = {6, 1, 2, 7, 3, 5};
         //quickSort(a, a.length);
-        quickSort(a, 0, a.length - 1);
+        //quickSort(a, 0, a.length - 1);
+        quickSort_3(a, 0, a.length - 1);
         System.out.println(Arrays.toString(a));
     }
 
@@ -134,5 +136,50 @@ public class QuickSort {
 
         }
 
+    }
+
+    /**
+     * 再刷
+     * <p>
+     * p 表示头元素下标
+     * <p>
+     * r 表示数组长度
+     *
+     * @param arr
+     */
+
+    public static void quickSort_3(int arr[], int p, int r) {
+        if (p >= r) return;
+        // 找到一个基准值
+        int q = partition(arr, p, r);
+
+        quickSort_3(arr, p, q - 1);
+        quickSort_3(arr, q + 1, r);
+
+    }
+
+    static int partition(int arr[], int p, int r) {
+
+        //首先取最后一个值当基准值
+        int pivot = arr[r];
+
+        //定义两个指针 i j;
+
+        int i = p;
+        for (int j = p; j < r; ++j) {
+            if (arr[j] < pivot) {
+                // arr[i] 和arr[j]进行交换
+                int tmp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = tmp;
+                ++i;
+            }
+
+        }
+
+        int tmp = arr[r];
+        arr[r] = arr[i];
+        arr[i] = tmp;
+        return i;
     }
 }
