@@ -44,11 +44,24 @@ public class LeetCode_24 {
         myLinkedList.addAtIndex(1, 2);
         myLinkedList.addAtIndex(2, 3);
         myLinkedList.addAtIndex(3, 4);
-        //myLinkedList.addAtIndex(4, 5);
-        ListNode reverse = swapPairs(myLinkedList.head.next);
+        myLinkedList.addAtIndex(4, 5);
+        ListNode reverse = swapPairs1(myLinkedList.head.next);
         while (reverse != null) {
             System.out.println(reverse.val);
             reverse = reverse.next;
         }
+    }
+
+
+    public static ListNode swapPairs1(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode hx = head.next;
+        head.next = swapPairs1(head.next.next);
+        hx.next = head;
+
+        return hx;
     }
 }

@@ -1,5 +1,7 @@
 package cn.haoxiaoyong.data.structure.algorithm.tree;
 
+import cn.haoxiaoyong.data.structure.algorithm.leetcode.ListNode;
+
 /**
  * @author haoxiaoyong
  * @date created at 上午10:18 on 2021/7/9
