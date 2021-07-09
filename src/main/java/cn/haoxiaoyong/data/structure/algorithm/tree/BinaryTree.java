@@ -9,7 +9,7 @@ package cn.haoxiaoyong.data.structure.algorithm.tree;
 public class BinaryTree {
 
 
-    private Node tree;
+    public Node tree;
 
 
     public void delete(int data) {
@@ -109,6 +109,8 @@ public class BinaryTree {
         }
     }
 
+
+}
     class Node {
         //节点数据
         int data;
@@ -121,5 +123,3 @@ public class BinaryTree {
             this.data = data;
         }
     }
-
-}
