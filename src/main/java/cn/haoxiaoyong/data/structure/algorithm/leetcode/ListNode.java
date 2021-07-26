@@ -8,7 +8,7 @@ package cn.haoxiaoyong.data.structure.algorithm.leetcode;
  */
 public class ListNode {
 
-    int val;
+    public int val;
     public ListNode next;
 
     ListNode() {

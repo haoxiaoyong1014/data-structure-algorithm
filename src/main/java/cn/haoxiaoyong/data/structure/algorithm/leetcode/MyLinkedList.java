@@ -10,7 +10,7 @@ package cn.haoxiaoyong.data.structure.algorithm.leetcode;
 public class MyLinkedList {
 
     int size;
-    ListNode head;
+    public ListNode head;
 
     public MyLinkedList() {
         size = 0;
