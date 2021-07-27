@@ -1,9 +1,5 @@
 package cn.haoxiaoyong.data.structure.algorithm.leetcode;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 /**
  * @author haoxiaoyong on 2021/7/25 下午 7:28
@@ -11,29 +7,36 @@ import java.util.Set;
  * github: https://github.com/haoxiaoyong1014
  * Blog: www.haoxiaoyong.cn
  */
-public class LeetCode_83 {
+public class LeetCode_83_2 {
 
-    public static ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates2(ListNode head) {
+
         if (head == null) {
+
             return null;
         }
-        Set<Integer> dupSet = new LinkedHashSet<>();
-        ListNode curr = head;
-        while (curr != null) {
-
-            dupSet.add(curr.val);
-            curr = curr.next;
-        }
-
+        ListNode fast = head.next;
+        ListNode slow = head;
         ListNode prev = head;
-        Iterator<Integer> iterator = dupSet.iterator();
-        while (iterator.hasNext()) {
-            ListNode node = new ListNode(iterator.next());
+        while (fast != null /*&& fast.next != null*/) {
 
-            prev.next = node;
-            prev = prev.next;
+            if (slow.val == fast.val) {
+                ListNode dup = fast;
+                slow = fast;
+                fast = fast.next;
+                if (dup.next == null) {
+                    prev.next = null;
+                }
+            } else {
+                prev.next = fast;
+                prev = prev.next;
+                slow = fast;
+                fast = fast.next;
+            }
         }
-        return head.next;
+
+
+        return head;
     }
 
     public static void main(String[] args) {
@@ -46,8 +49,12 @@ public class LeetCode_83 {
         myLinkedList.addAtIndex(4, 0);
         myLinkedList.addAtIndex(5, 3);
         myLinkedList.addAtIndex(6, 3);
+        myLinkedList.addAtIndex(7, 4);
+        myLinkedList.addAtIndex(8, 5);
+        /*myLinkedList.addAtIndex(9, 5);*/
 
-        ListNode reverse = deleteDuplicates(myLinkedList.head.next);
+
+        ListNode reverse = deleteDuplicates2(myLinkedList.head.next);
         while (reverse != null) {
             System.out.println(reverse.val);
             reverse = reverse.next;
