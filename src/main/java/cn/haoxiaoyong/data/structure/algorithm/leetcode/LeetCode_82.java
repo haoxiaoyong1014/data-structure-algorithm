@@ -15,7 +15,9 @@ public class LeetCode_82 {
 
         Map<ListNode, Integer> map = new HashMap<>();
 
-        while (head != null) {
+        ListNode prev = head;
+        while (prev != null) {
+
             if (map.get(head) != null) {
 
             }
@@ -25,7 +27,7 @@ public class LeetCode_82 {
 
     public static ListNode deleteDuplicates3(ListNode head) {
 
-        //ListNode prev = new ListNode(0);
+        //ListNode prev = new ListNode();
         ListNode prev = head;
 
         ListNode slow = head;
