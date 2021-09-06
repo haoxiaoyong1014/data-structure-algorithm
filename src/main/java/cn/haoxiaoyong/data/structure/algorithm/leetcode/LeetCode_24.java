@@ -45,7 +45,8 @@ public class LeetCode_24 {
         myLinkedList.addAtIndex(2, 3);
         myLinkedList.addAtIndex(3, 4);
         myLinkedList.addAtIndex(4, 5);
-        ListNode reverse = swapPairs1(myLinkedList.head.next);
+        myLinkedList.addAtIndex(5, 6);
+        ListNode reverse = swapPairs2(myLinkedList.head.next);
         while (reverse != null) {
             System.out.println(reverse.val);
             reverse = reverse.next;
@@ -64,4 +65,38 @@ public class LeetCode_24 {
 
         return hx;
     }
+
+
+    /**
+     * 遍历的方式
+     */
+
+    public static ListNode swapPairs2(ListNode head) {
+
+        ListNode newListNode = new ListNode(-1);
+        newListNode.next = head;
+
+        ListNode curNode = newListNode;
+        //ListNode cur = head;
+
+        while (curNode != null && curNode.next != null && curNode.next.next != null) {
+
+            ListNode f = curNode;
+            ListNode s = curNode.next;
+            ListNode t = curNode.next.next;
+
+            f.next = t;
+            s.next = t.next;
+            t.next = s;
+
+            curNode = curNode.next.next;
+
+        }
+
+
+        return newListNode.next;
+
+    }
+
+
 }
