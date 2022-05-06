@@ -10,7 +10,7 @@ import java.util.Map;
  * @github https://github.com/haoxiaoyong1014
  * @blog www.haoxiaoyong.cn
  * <p>
- * 两树之和
+ * 两数之和
  */
 public class LeetCode_1 {
 
@@ -43,10 +43,27 @@ public class LeetCode_1 {
 
 
     public static void main(String[] args) {
-        int[] nums = {2, 7, 11, 15};
+        int[] nums = {2, 7, 11, 15,4};
         //int[] nums = {3,2,4};
         //int[] nums = {0, 4, 3, 0};
         int[] ints = twoSum1(nums, 13);
+        //int[] ints =twoSum2(nums,11);
         System.out.println(Arrays.toString(ints));
+    }
+
+
+    public static int[] twoSum2(int[] nums, int tag) {
+        if (nums.length == 0) {
+            return new int[]{};
+        }
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i; j < nums.length - 1; j++) {
+                int i1 = nums[i] + nums[j+1];
+                if (i1 == tag) {
+                    return new int[]{i, j+1};
+                }
+            }
+        }
+        return new int[]{};
     }
 }
