@@ -46,6 +46,22 @@ public class LeetCode_Popular_03 {
 
     public static void main(String[] args) {
         // " "  a  abcabcbb   bbbbb   pwwkew  abcaeufewk  aab
-        System.out.println(lengthOfLongestSubstring("aab"));
+        System.out.println(optimizationLengthOfLongestSubstring("abcabcbb"));
+    }
+
+    public static int optimizationLengthOfLongestSubstring(String astr) {
+        if (astr.length() == 0) return 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        int start = 0;
+        int max = 0;
+        char[] chars = astr.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (map.containsKey(chars[i])) {
+                start = Math.max(start, map.get(chars[i]));
+            }
+            max = Math.max(max, i - start + 1);
+            map.put(chars[i], i + 1);
+        }
+        return max;
     }
 }
