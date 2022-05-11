@@ -10,7 +10,7 @@ import java.util.Set;
  * @github https://github.com/haoxiaoyong1014
  * @blog www.haoxiaoyong.cn
  */
-public class LeetCode_interview_01 {
+public class LeetCode_Interview_01 {
 
     public static boolean isUnique(String astr) {
 
