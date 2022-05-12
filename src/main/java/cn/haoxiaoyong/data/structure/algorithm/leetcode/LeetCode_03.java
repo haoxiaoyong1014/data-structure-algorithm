@@ -10,7 +10,7 @@ import java.util.*;
  * <p>
  * 热题100之 03无重复字符的最长子串
  */
-public class LeetCode_Popular_03 {
+public class LeetCode_03 {
 
 
     public static int lengthOfLongestSubstring(String astr) {
