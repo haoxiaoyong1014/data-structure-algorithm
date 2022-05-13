@@ -238,8 +238,8 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         //简单查找
-        /*int arr[] = {8, 11, 19, 23, 27, 33, 45, 55, 67, 98};
-        System.out.println(binarySearch(arr, 8));*/
+        int arr[] = {8, 11, 19, 23, 27, 33, 45, 55, 67, 98};
+        System.out.println(binarySearch(arr, 11));
 
 
         //查找第一个值等于给定值的元素
@@ -259,8 +259,8 @@ public class BinarySearch {
         System.out.println(lastLessThanOrEqBinarySearch(lastLessThanOrEqArr, 5));*/
 
         //目前是存在很大的问题
-        int arr[] = {5, 6, 7, 9, 11, 12, 0, 1, 2, 4};
-        System.out.println(search(arr, 4));
+        /*int arr[] = {5, 6, 7, 9, 11, 12, 0, 1, 2, 4};
+        System.out.println(search(arr, 4));*/
 
     }
 }

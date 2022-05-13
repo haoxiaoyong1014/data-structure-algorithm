@@ -51,10 +51,10 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] arr = {4, 5, 6, 3, 2, 1};
-        //bubbleSort(arr);
+        bubbleSort(arr);
         //optimizationBubbleSort(arr, arr.length);
         //bubbleSort2(arr);
-        bubbleSortSuperior(arr);
+        //bubbleSortSuperior(arr);
     }
 
 
