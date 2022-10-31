@@ -43,11 +43,10 @@ public class LeetCode_1 {
 
 
     public static void main(String[] args) {
-        int[] nums = {2, 7, 11, 15,4};
-        //int[] nums = {3,2,4};
+        int[] nums = {2, 7, 11, 15, 4};
+        //int[] nums = {3, 2, 4};
         //int[] nums = {0, 4, 3, 0};
-        int[] ints = twoSum1(nums, 13);
-        //int[] ints =twoSum2(nums,11);
+        int[] ints =twoSum1(nums,11);
         System.out.println(Arrays.toString(ints));
     }
 
@@ -58,9 +57,9 @@ public class LeetCode_1 {
         }
         for (int i = 0; i < nums.length; i++) {
             for (int j = i; j < nums.length - 1; j++) {
-                int i1 = nums[i] + nums[j+1];
+                int i1 = nums[i] + nums[j + 1];
                 if (i1 == tag) {
-                    return new int[]{i, j+1};
+                    return new int[]{i, j + 1};
                 }
             }
         }

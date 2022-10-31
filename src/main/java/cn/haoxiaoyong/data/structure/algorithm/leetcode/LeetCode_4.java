@@ -34,12 +34,13 @@ public class LeetCode_4 {
             }
         }
         double divide = (double) list.size() / (double) 2;
-        String str = String.valueOf(divide);
+        int divideInt = (int) divide;
+        String str = String.valueOf(divideInt);
         if (str.contains(".")) {
-            Integer target = list.get((int)divide);
+            Integer target = list.get(divideInt);
             return Double.valueOf(target);
         } else {
-            BigDecimal divisor = new BigDecimal(list.get((int)divide) + list.get((int)divide - 1));
+            BigDecimal divisor = new BigDecimal(list.get(divideInt) + list.get(divideInt - 1));
             BigDecimal tag = divisor.divide(new BigDecimal(2));
             return tag.doubleValue();
         }
@@ -48,7 +49,7 @@ public class LeetCode_4 {
     public static void main(String[] args) {
         // 1 2 3 4 5 6 7 8 9
         int[] nums1 = new int[]{1, 2, 3, 4, 5};
-        int[] nums2 = new int[]{6, 7, 8, 11, 12};
+        int[] nums2 = new int[]{6, 7, 8, 11};
         System.out.println(findMedianSortedArrays(nums1, nums2));
     }
 }
