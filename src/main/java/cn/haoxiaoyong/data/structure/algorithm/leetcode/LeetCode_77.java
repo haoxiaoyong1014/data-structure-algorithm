@@ -7,7 +7,7 @@ import java.util.List;
  * @author haoxiaoyong
  * @version 1.0.0
  * @date created at 下午2:14 on 2022/10/31
- * 组合
+ * 回溯-->组合
  */
 public class LeetCode_77 {
 
@@ -33,8 +33,8 @@ public class LeetCode_77 {
         //循环遍历
         for (int i = startIndex; i <= n; i++) {
             path.add(i);
-            int s = ++startIndex;
-            backTracking(n, k, s);
+            ++startIndex;
+            backTracking(n, k, startIndex);
             path.remove(path.size() - 1);
         }
     }
