@@ -19,11 +19,9 @@ public class LeetCode_216 {
     public static void backTracking(int sum, int k, int n, int startIndex) {
 
         //找到终止条件
-        if (paths.size() == k) {
-            if (sum == n) {
-                List<Integer> results = new ArrayList<>(paths);
-                lists.add(results);
-            }
+        if (paths.size() == k && sum == n) {
+            List<Integer> results = new ArrayList<>(paths);
+            lists.add(results);
             return;
         }
 
