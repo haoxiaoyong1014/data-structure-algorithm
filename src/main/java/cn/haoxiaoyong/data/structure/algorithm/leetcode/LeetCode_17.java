@@ -32,12 +32,13 @@ public class LeetCode_17 {
 
     public static void backTracking(String digits, int startIndex) {
 
-
         char[] chars = digits.toCharArray();
-
         if (paths.size() == chars.length) {
-            List<String> results = new ArrayList<>(paths);
-            lists.addAll(results);
+            StringBuffer target = new StringBuffer();
+            for (int k = 0; k < paths.size(); k++) {
+                target.append(paths.get(k));
+            }
+            lists.add(target.toString());
             return;
         }
         for (int i = startIndex; i < chars.length; i++) {
@@ -46,19 +47,21 @@ public class LeetCode_17 {
             for (int j = 0; j < str.length; j++) {
                 paths.add(str[j]);
                 backTracking(digits, startIndex);
-                paths.remove(paths.size()-1);
+                paths.remove(paths.size() - 1);
             }
         }
-
     }
 
     public static List<String> letterCombinations(String digits) {
+        if(digits.isEmpty()){
+            return new ArrayList<>();
+        }
         putData();
         backTracking(digits, 0);
         return lists;
     }
 
     public static void main(String[] args) {
-        System.out.println(letterCombinations("23"));
+        System.out.println(letterCombinations(""));
     }
 }
