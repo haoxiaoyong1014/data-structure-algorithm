@@ -1,9 +1,6 @@
 package cn.haoxiaoyong.data.structure.algorithm.leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author haoxiaoyong
@@ -30,11 +27,31 @@ public class LeetCode_17 {
         hashMap.put('9', new String[]{"w", "x", "y", "z"});
     }
 
+    public static void backTracking2(String digits, int startIndex, StringBuilder target) {
+        char[] chars = digits.toCharArray();
+
+        if (target.length() == chars.length) {
+            lists.add(target.toString());
+            return;
+        }
+        for (int i = startIndex; i < chars.length; i++) {
+            ++startIndex;
+            String[] str = hashMap.get(chars[i]);
+            for (int j = 0; j < str.length; j++) {
+                target.append(str[j]);
+                backTracking2(digits, startIndex, target);
+                target.deleteCharAt(target.length() - 1);
+            }
+        }
+
+    }
+
+
     public static void backTracking(String digits, int startIndex) {
 
         char[] chars = digits.toCharArray();
         if (paths.size() == chars.length) {
-            StringBuffer target = new StringBuffer();
+            StringBuilder target = new StringBuilder();
             for (int k = 0; k < paths.size(); k++) {
                 target.append(paths.get(k));
             }
@@ -53,15 +70,16 @@ public class LeetCode_17 {
     }
 
     public static List<String> letterCombinations(String digits) {
-        if(digits.isEmpty()){
+        if (digits.isEmpty()) {
             return new ArrayList<>();
         }
         putData();
-        backTracking(digits, 0);
+        //backTracking(digits, 0);
+        backTracking2(digits, 0, new StringBuilder());
         return lists;
     }
 
     public static void main(String[] args) {
-        System.out.println(letterCombinations(""));
+        System.out.println(letterCombinations("23"));
     }
 }
