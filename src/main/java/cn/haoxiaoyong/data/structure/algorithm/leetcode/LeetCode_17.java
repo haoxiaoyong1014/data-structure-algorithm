@@ -81,5 +81,8 @@ public class LeetCode_17 {
 
     public static void main(String[] args) {
         System.out.println(letterCombinations("23"));
+       /* String str = "23";
+        char c = str.charAt(0);
+        System.out.println(c); 2 */
     }
 }
