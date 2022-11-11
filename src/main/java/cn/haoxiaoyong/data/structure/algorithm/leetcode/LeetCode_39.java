@@ -32,7 +32,7 @@ public class LeetCode_39 {
         for (int i = startIndex; i < candidates.length; i++) {
             paths.add(candidates[i]);
             sum += candidates[i];
-            backTracking(candidates, target, sum, startIndex);
+            backTracking(candidates, target, sum, i);
             paths.remove(paths.size() - 1);
             sum -= candidates[i];
 
