@@ -27,21 +27,22 @@ public class LeetCode_40 {
         if (sum == target) {
             List<Integer> resultList = new ArrayList<>(paths);
             lists.add(resultList);
+            return;
         }
         // 横向遍历
         for (int i = startIndex; i < nums.length; i++) {
             //去重,前提是排序
-            if (i > 0 && nums[i - 1] == nums[i] && !used[i - 1]) {
+            if (i > startIndex && nums[i - 1] == nums[i]/* && !used[i - 1]*/) {
                 continue;
             }
             paths.add(nums[i]);
             sum += nums[i];
-            used[i] = true;
+           // used[i] = true;
             // 纵向递归遍历
             backTracking(nums, i + 1, target, sum, used);
             //回溯
             sum -= nums[i];
-            used[i] = false;
+           // used[i] = false;
             paths.remove(paths.size() - 1);
         }
     }
@@ -56,7 +57,7 @@ public class LeetCode_40 {
 
     public static void main(String[] args) {
         //int[] nums = {10, 1, 2, 7, 6, 1, 5};
-        int[] nums = {3, 1, 3, 5, 1, 1};
-        System.out.println(combinationSum2(nums, 8));
+        int[] nums = {1,2,2};
+        System.out.println(combinationSum2(nums, 3));
     }
 }
