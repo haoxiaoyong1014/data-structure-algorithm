@@ -8,20 +8,20 @@ import java.util.List;
  * @version 1.0.0
  * @date created at 上午9:11 on 2022/11/1
  * 回溯-->子集
- *
+ * <p>
  * 回溯模板：
- *
+ * <p>
  * void backtracking(参数) {
- *      存放结果;
- *     if (终止条件) {
- *         return;
- *     }
- *
- *     for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
- *         处理节点;
- *         backtracking(路径，选择列表); // 递归
- *         回溯，撤销处理结果
- *     }
+ * 存放结果;
+ * if (终止条件) {
+ * return;
+ * }
+ * <p>
+ * for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
+ * 处理节点;
+ * backtracking(路径，选择列表); // 递归
+ * 回溯，撤销处理结果
+ * }
  * }
  */
 public class LeetCode_78 {
@@ -63,8 +63,24 @@ public class LeetCode_78 {
 
 
     public static List<List<Integer>> subsets(int[] nums) {
-        backTracking(nums, 0);
+        backTracking2(nums, 0);
         return lists;
+    }
+
+    public static void backTracking2(int[] num, int startIndex) {
+
+        List<Integer> results = new ArrayList<>(subsetList);
+        lists.add(results);
+        if (startIndex == num.length) {
+            return;
+        }
+
+        for (int i = startIndex; i < num.length; i++) {
+            subsetList.add(num[i]);
+            ++startIndex;
+            backTracking2(num, startIndex);
+            subsetList.remove(subsetList.size() - 1);
+        }
     }
 
 }
